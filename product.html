@@ -14,7 +14,23 @@
     <script src="http://osvaldas.info/examples/main.js"></script>
     <script src="http://osvaldas.info/examples/drop-down-navigation-touch-friendly-and-responsive/doubletaptogo.js"></script>
     <script src="js/scripts.js"></script>
+    <script>
+        $(function () {
+            if ($(window).width() <= 1024) {
+                $('#menu-toggle').click(function () {
+                    $(this).toggleClass('expanded').siblings('div').slideToggle();
+                });
+            }
 
+            if ($(window).width() <= 1024) {
+                $('#accordion').find('.accordion-toggle').click(function () {
+                    $(this).next().slideToggle('fast');
+                    $(".accordion-content").not($(this).next()).slideUp('fast');
+
+                });
+            }
+        });
+    </script>
 </head>
 <body>
 
